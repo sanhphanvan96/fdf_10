@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  load_and_authorize_resource
+  # load_and_authorize_resource
 
   def create
     @product = Product.find_by id: comment_params[:product_id]
@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
     end
   end
 
-  private
+  # private
 
   def comment_params
     params.require(:comment).permit :content, :user_id, :product_id
